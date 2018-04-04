@@ -1,6 +1,10 @@
 body {
 background-color: lightcoral;
 }
-h1 {color: rgb(92, 204, 120);}
-
+h1 {
+  font-size: 40px;
+  color: rgb(9, 87, 53);}
+p {
+  font-size: 20px;
+  color: rgb(19, 78, 105)}
 
