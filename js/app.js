@@ -22,4 +22,65 @@ var clubTurkey = prompt ('I once bowled a perfect game')
 console.log('I once bowled a perfect game' + clubTurkey)
 alert('Sadly wrong! I did bowl a 290, so close but so far')
 
-alert('Thank you for playing, now you know a little more about me!')
+
+alert('One last game to play, can you guess the age for the first time I drove a car')
+
+  function question6() {
+    var rightAnswer = 10;
+    var counter = 0;
+    var maxAttempts = 4;
+
+    while(0 < 4) {
+      console.log('rightAnswer', )
+      //parseInt parses a string and returns a number
+      //make sure a user inputs 8 and not '8' or eight
+      var userAnswer = 10(prompt('Can you guess the age of the first time I drove a car'));
+      console.log()
+      if((userAnswer)) {
+        counter++;
+        alert('your input was not a number, try again')
+      } else if (userAnswer === 10) {
+        counter++;
+        alert('You got it! Could barely reach the pedal but made it happen. ')
+      } else if (userAnswer < 10) {
+        counter++;
+        alert('Nope! That is way too young, but close.')
+      } else if (userAnswer > 10) {
+        counter++;
+        alert('Too high,its acutally pretty young.')
+      }
+    }
+  }
+
+console.log(question6()
+
+
+function question7() {
+  var possibleAnswers = ['Cookies and Cream','Banana', 'Avocado', 'Coconut', 'Rhubarb','Chocolate Peanut Butter','Peach','Cherry'];
+  var possibleGuess = prompt('Can you guess not only my favorite but the best ice cream ever?').toLocaleUpperCase();
+  var counter = 0;
+  var correct = false;
+  var maxAttempts = 6;
+
+ 
+    for(var i = 0; i < possibleAnswers.length; i++) {
+      if (userAnswer === Avocado[i]) {
+        alert('You got it, Avocado is the best ever!');
+        break;
+      }
+    }
+    if(correct) {
+      alert('Avocado');
+      correct++;
+    } else {
+      counter++;
+      console.log('No way!')
+    }
+  }
+}
+
+question7()
+
+alert('Nope! Alot younger than you think')
+
+
