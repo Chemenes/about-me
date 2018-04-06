@@ -173,18 +173,18 @@ function question6() {
   while(userAnswer !== rightAnswer && counter < maxAttempts) {
     counter++;
     if(userAnswer > rightAnswer) {
-      userAnswer = parseInt(prompt('Answer too high. Try again:'));
+      userAnswer = parseInt(prompt('Good guess but suprisingly lower. Try again:'));
     } else if(userAnswer < rightAnswer) {
-      userAnswer = parseInt(prompt('Answer too low. Try again:'));
+      userAnswer = parseInt(prompt('Whoa not that young. Try:'));
     } else {
-      userAnswer = parseInt(prompt('Invalid answer. Try again:'));
+      userAnswer = parseInt(prompt('Nope!. Try a number this time:'));
     }
   }
 
   if(counter === 1) {
     alert('First try!');
   } else if(counter === maxAttempts ) {
-    alert('You ran out of attmpts. The right answer was ' + rightAnswer);
+    alert('Sorry buddy, you ran out of tries. The right answer was ' + rightAnswer);
   } else {
     alert('You got it in ' + counter + ' attempts.');
   }
