@@ -2,83 +2,143 @@
 
 alert('Few people may know some pretty interesting facts about my life. I will list some off and you try and guess if they are true or false.');
 
-var snowFall = prompt('I once got stuck in a snow tunnel and no one could find me for 6 hours?');
-console.log('I once got stuck in a snow tunnel and noone could find me for 6 hours?' + snowFall);
-alert('This is false, although i did get stuck in a snow tunnel it only took about 5 minutes to get me out.');
+var correctAnswers = 0;
 
-var skateBoard = prompt('I\'ve been skateboarding for more than half my life and haven\'t broken a bone?');
-console.log('I\'ve been skateboarding for more than half my life and haven\'t broken a bone?' + skateBoard); 
-alert('This is true, my ankles have been twisted so much they can do a 360 but not one broken bone!');
+/**
+* Question 1
+*/
+do {
+  var snowFall = prompt('I once got stuck in a snow tunnel and no one could find me for 6 hours?\nYes or No').toUpperCase();
 
-var swim = prompt('I can swim');
-console.log('I can swim' + swim);
-alert('I can swim! Although i cannot stay afloat in deep water.');
+  if(snowFall === 'NO') {
+    alert('Thats right.');
+    correctAnswers++;
+  } else if(snowFall === 'YES') {
+    alert('Thats wrong');
+  } else {
+    alert('Please use \'Yes\' or \'No\'.');
+  }
+} while (snowFall !== 'NO' && snowFall !== 'YES');
 
-var sunAllergy = prompt('My sun allergy is why I moved to Seattle');
-console.log('My sun allergy is why I moved to Seattle' + sunAllergy);
-alert('False! I love the sun, even though Seattle hides it away. I have no allergies but can\'t stand tomatoes');
+/**
+* Question 2
+*/
+do {
+  var skateBoard = prompt('I\'ve been skateboarding for more than half my life and haven\'t broken a bone?\nYes or No').toUpperCase();
+  if(skateBoard === 'NO') {
+    alert('Thats right.');
+    correctAnswers++;
+  } else if(skateBoard === 'YES') {
+    alert('Thats wrong');
+  } else {
+    alert('Please use \'Yes\' or \'No\'.');
+  }
+} while (skateBoard !== 'NO' && skateBoard !== 'YES');
 
-var clubTurkey = prompt ('I once bowled a perfect game');
-console.log('I once bowled a perfect game' + clubTurkey);
-alert('Sadly wrong! I did bowl a 290, so close but so far');
+/**
+* Question 3
+*/
+do {
+  var swim = prompt('Do you think I can swim?\nYes or No').toUpperCase();
+  if(swim === 'NO') {
+    alert('Thats right.');
+    correctAnswers++;
+  } else if(swim === 'YES') {
+    alert('Thats wrong');
+  } else {
+    alert('Please use \'Yes\' or \'No\'.');
+  }
+} while (swim !== 'NO' && swim !== 'YES');
+
+/**
+* Question 4
+*/
+do {
+  var sunAllergy = prompt('My sun allergy is why I moved to Seattle.\nYes or No').toUpperCase();
+  if(sunAllergy === 'NO') {
+    alert('Thats right.');
+    correctAnswers++;
+  } else if(sunAllergy === 'YES') {
+    alert('Thats wrong');
+  } else {
+    alert('Please use \'Yes\' or \'No\'.');
+  }
+} while (sunAllergy !== 'NO' && sunAllergy !== 'YES');
+
+/**
+* Question 5
+*/
+do {
+  var clubTurkey = prompt('I once bowled a perfect game.\nYes or No').toUpperCase();
+  if(clubTurkey === 'NO') {
+    alert('Thats right.');
+    correctAnswers++;
+  } else if(clubTurkey === 'YES') {
+    alert('Thats wrong');
+  } else {
+    alert('Please use \'Yes\' or \'No\'.');
+  }
+} while (clubTurkey !== 'NO' && clubTurkey !== 'YES');
+
+alert('You got ' + correctAnswers + ' right answers.');
 
 
-alert('One last game to play, can you guess the age for the first time I drove a car');
+question6();
+question7();
 
+/**
+* Question 6
+*/
 function question6() {
   var rightAnswer = 10;
   var counter = 0;
   var maxAttempts = 4;
 
-  while(counter < maxAttempts) {
-    console.log('rightAnswer');
-    //parseInt parses a string and returns a number
-    //make sure a user inputs 8 and not '8' or eight
-    var userAnswer = parseInt(prompt('Can you guess the age of the first time I drove a car'));
-    if(userAnswer) {
-      counter++;
-      alert('your input was not a number, try again');
-    } else if (userAnswer === 10) {
-      counter++;
-      alert('You got it! Could barely reach the pedal but made it happen.');
-    } else if (userAnswer < 10) {
-      counter++;
-      alert('Nope! That is way too young, but close.');
-    } else if (userAnswer > 10) {
-      counter++;
-      alert('Too high,its acutally pretty young.');
-    }
-  }
-}
+  var userAnswer = parseInt(prompt('Can you guess the age of the first time I drove a car'));
+  counter++;
 
-question6();
-
-
-function question7() {
-  var possibleAnswers = ['cookie','banana', 'avocado', 'coconut', 'rhubarb','chocolate peanut butter','peach','cherry'];
-  var possibleGuess = prompt('Can you guess not only my favorite but the best ice cream ever?').toLowerCase();
-  var counter = 0;
-  var correct = false;
-  var maxAttempts = 6;
-
- 
-  for(var i = 0; i < possibleAnswers.length; i++) {
-    if (possibleGuess === possibleAnswers[i]) {
-      alert('Correct! these are all the possible answers. Cookie, Banana, Avocado, Coconut, Rhubarb, Chocolate Peanut Butter, Peach, Cherry');
-      break;
-    }
-  }
-  if(correct) {
-    alert('Avocado');
-    correct++;
-  } else {
+  while(userAnswer !== rightAnswer && counter < maxAttempts) {
     counter++;
-    console.log('No way!');
+    if(userAnswer > rightAnswer) {
+      userAnswer = parseInt(prompt('Answer too high. Try again:'));
+    } else if(userAnswer < rightAnswer) {
+      userAnswer = parseInt(prompt('Answer too low. Try again:'));
+    } else {
+      userAnswer = parseInt(prompt('Invalid answer. Try again:'));
+    }
+  }
+
+  if(counter === 1) {
+    alert('First try!');
+  } else if(counter === maxAttempts ) {
+    alert('You ran out of attmpts. The right answer was ' + rightAnswer);
+  } else {
+    alert('You got it in ' + counter + ' attempts.');
   }
 }
 
-question7();
+/**
+* Question 7
+*/
+function question7() {
+  var possibleAnswers = ['cookie', 'banana', 'avocado', 'coconut', 'rhubarb', 'chocolate peanut butter', 'peach','cherry'];
+  var possibleGuess;
+  var attempts = 6;
+  var flag = true;
 
-alert('Nope! Alot younger than you think');
+  do {
+    possibleGuess = prompt('Can you guess not only my favorite, but the best ice cream ever?\n' + attempts + ' attempts left').toLowerCase();
+    attempts--;
+    for(var i = 0; i < possibleAnswers.length; i++) {
+      if(possibleGuess === possibleAnswers[i]) {
+        alert('Thats right!');
+        flag = false;
+        break;
+      }
+    }
+  } while (flag && attempts > 0);
 
-
+  if (attempts >= 0) {
+    alert('You could have said:\n' + possibleAnswers);
+  }
+}
