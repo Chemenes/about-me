@@ -12,6 +12,79 @@ do {
 
   if(snowFall === 'NO') {
     alert('Thats right.');
+    correctAnswers++;}  else if(snowFall === 'YES') {
+    alert('Thats wrong');}  else {
+    alert('Please use \'Yes\' or \'No\'.');
+  }
+} while (snowFall !== 'NO' && snowFall !== 'YES');
+
+/**
+* Question 2
+*/
+do {
+  var skateBoard = prompt('I\'ve been skateboarding for more than half my life and haven\'t broken a bone?\nYes or No').toUpperCase();
+  if(skateBoard === 'NO') {
+    alert('Thats right.');
+    correctAnswers++;
+  }  else if(skateBoard === 'YES') {
+    alert('Thats wrong');
+  }  else {
+    alert('Please use \'Yes\' or \'No\'.');
+  }
+} while (skateBoard !== 'NO' && skateBoard !== 'YES');
+
+/**
+* Question 3
+*/
+do {
+  var swim = prompt('Do you think I can swim?\nYes or No').toUpperCase();
+  if(swim === 'NO') {
+    alert('Thats right.');
+    correctAnswers++;
+  } else if(swim === 'YES') {
+ 
+}
+
+/**
+* Question 7
+*/
+function question7() {
+ var possibleAnswers = ['cookie', 'banana', 'avocado', 'coconut', 'rhubarb', 'chocolate peanut butter', 'peach','cherry'];
+ var possibleGuess;
+ var attempts = 6;
+ var flag = true;
+
+ do {
+   possibleGuess = prompt('Can you guess not only my favorite, but the best ice cream ever?\n' + attempts + ' attempts left').toLowerCase();
+   attempts--;
+   for(var i = 0; i < possibleAnswers.length; i++) {
+     if(possibleGuess === possibleAnswers[i]) {
+       alert('Thats right!');
+       flag = false;
+       break;
+     }
+   }
+ } while (flag && attempts > 0);
+
+ if (attempts >= 0) {
+   alert('You could have said:\n' + possibleAnswers);
+ }
+}
+
+'use strict';
+
+alert('Few people may know some pretty interesting facts about my life. I will list some off and you try and guess if they are true or false.');
+
+var correctAnswers = 0;
+
+/**
+* Question 1
+*/
+do {
+  var snowFall = prompt('I once got stuck in a snow tunnel and no one could find me for 6 hours?\nYes or No').toUpperCase();
+
+  if(snowFall === 'NO') {
+    alert('Thats right.');
     correctAnswers++;
   } else if(snowFall === 'YES') {
     alert('Thats wrong');
@@ -141,4 +214,3 @@ function question7() {
   if (attempts >= 0) {
     alert('You could have said:\n' + possibleAnswers);
   }
-}
